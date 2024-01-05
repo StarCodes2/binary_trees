@@ -29,9 +29,9 @@ int binary_tree_h(const binary_tree_t *tree)
 	{
 		l = r = 1;
 		if (tree->left != NULL)
-			l = 1 + binary_tree_balance(tree->left);
+			l = 1 + binary_tree_h(tree->left);
 		if (tree->right != NULL)
-			r = 1 + binary_tree_balance(tree->right);
+			r = 1 + binary_tree_h(tree->right);
 		return ((l > r) ? l : r);
 	}
 
